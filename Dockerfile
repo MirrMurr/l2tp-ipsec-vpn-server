@@ -1,4 +1,4 @@
-FROM debian:strech
+FROM debian:stretch
 MAINTAINER Adam KARA <kara.p.adam@gmail.com>
 
 ENV REFRESHED_AT 2019-12-06
