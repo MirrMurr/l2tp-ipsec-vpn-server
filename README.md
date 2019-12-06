@@ -7,7 +7,7 @@ Docker image to run an IPsec VPN server, with support for both `IPsec/L2TP` and 
 
 Based on Debian Jessie with [Libreswan](https://libreswan.org) (IPsec VPN software) and [xl2tpd](https://github.com/xelerance/xl2tpd) (L2TP daemon).
 
-This docker image is based on [Lin Song work](https://github.com/hwdsl2/docker-ipsec-vpn-server) and adds those features:
+This docker image is based on [Lin Song](https://github.com/hwdsl2/docker-ipsec-vpn-server)'s and [Francis Cojean](https://github.com/fcojean/l2tp-ipsec-vpn-server)'s work and adds those features:
 
 * Multiple VPN users declaration support
 * Native NAT Transversal support
@@ -20,18 +20,18 @@ Follow [these instructions](https://docs.docker.com/engine/installation/) to get
 
 ## Download
 
-Get the trusted build from the [Docker Hub registry](https://hub.docker.com/r/fcojean/l2tp-ipsec-vpn-server):
+Get the trusted build from the [Docker Hub registry](https://hub.docker.com/r/MirrMurr/l2tp-ipsec-vpn-server):
 
 ```
-docker pull fcojean/l2tp-ipsec-vpn-server
+docker pull mirrmurr/l2tp-ipsec-vpn-server
 ```
 
 or download and compile the source yourself from GitHub:
 
 ```
-git clone https://github.com/fcojean/l2tp-ipsec-vpn-server.git
+git clone https://github.com/MirrMurr/l2tp-ipsec-vpn-server.git
 cd l2tp-ipsec-vpn-server
-docker build -t fcojean/l2tp-ipsec-vpn-server .
+docker build -t mirrmurr/l2tp-ipsec-vpn-server .
 ```
 
 ## How to use this image
@@ -72,7 +72,7 @@ docker run \
     -p 4500:4500/udp \
     -v /lib/modules:/lib/modules:ro \
     -d --privileged \
-    fcojean/l2tp-ipsec-vpn-server
+    mirrmurr/l2tp-ipsec-vpn-server
 ```
 
 ### Retrieve VPN login details
@@ -140,6 +140,7 @@ Copyright (C) 2016 François COJEAN
 
 Based on [the work of Lin Song](https://github.com/hwdsl2/docker-ipsec-vpn-server) (Copyright 2016)   
 Based on [the work of Thomas Sarlandie](https://github.com/sarfata/voodooprivacy) (Copyright 2012)
+Based on [the work of Francis Cojean](https://github.com/fcojean/l2tp-ipsec-vpn-server) (Copyright 2019)
 
 This work is licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/)   
 Attribution required: please include my name in any derivative and let me know how you have improved it !
