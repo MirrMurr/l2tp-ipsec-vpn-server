@@ -1,7 +1,7 @@
-FROM debian:jessie
-MAINTAINER Francois COJEAN <francois.cojean@gmail.com>
+FROM debian:strech
+MAINTAINER Adam KARA <kara.p.adam@gmail.com>
 
-ENV REFRESHED_AT 2016-06-05
+ENV REFRESHED_AT 2019-12-06
 
 ENV SWAN_VER 3.17
 ENV DEBIAN_FRONTEND noninteractive
