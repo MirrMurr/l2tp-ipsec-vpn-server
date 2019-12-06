@@ -7,7 +7,7 @@ Docker image to run an IPsec VPN server, with support for both `IPsec/L2TP` and 
 
 Based on Debian Jessie with [Libreswan](https://libreswan.org) (IPsec VPN software) and [xl2tpd](https://github.com/xelerance/xl2tpd) (L2TP daemon).
 
-This docker image is based on [Lin Song](https://github.com/hwdsl2/docker-ipsec-vpn-server)'s and [Francis Cojean](https://github.com/fcojean/l2tp-ipsec-vpn-server)'s work and adds those features:
+This docker image is based on [Lin Song](https://github.com/hwdsl2/docker-ipsec-vpn-server)'s and [Francois Cojean](https://github.com/fcojean/l2tp-ipsec-vpn-server)'s work and adds those features:
 
 * Multiple VPN users declaration support
 * Native NAT Transversal support
@@ -140,7 +140,6 @@ Copyright (C) 2016 François COJEAN
 
 Based on [the work of Lin Song](https://github.com/hwdsl2/docker-ipsec-vpn-server) (Copyright 2016)   
 Based on [the work of Thomas Sarlandie](https://github.com/sarfata/voodooprivacy) (Copyright 2012)
-Based on [the work of Francis Cojean](https://github.com/fcojean/l2tp-ipsec-vpn-server) (Copyright 2019)
 
 This work is licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/)   
 Attribution required: please include my name in any derivative and let me know how you have improved it !
