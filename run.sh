@@ -161,8 +161,6 @@ ms-dns $VPN_DNS1
 ms-dns $VPN_DNS2
 noccp
 auth
-crtscts
-lock
 lcp-echo-failure 4
 lcp-echo-interval 30
 EOF
