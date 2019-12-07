@@ -14,7 +14,7 @@ This docker image is based on [Lin Song](https://github.com/hwdsl2/docker-ipsec-
 * No waiting time before a user can reconnect in case of disconnection support
 * Custom network interface support
 
-## Deploy on Raspberry
+## Deploy on Raspberry Pi
 After cloning this repository replace ```FROM debian:stretch``` with ```FROM resin/rpi-raspbian:stretch``` in the first line of the Dockerfile, then follow the building instructions!
 This is because the raspberry's cpu's architecture is ARM and therefore requires another type of base image to build the final from.
 
