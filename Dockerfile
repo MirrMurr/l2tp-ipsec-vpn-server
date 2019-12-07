@@ -1,7 +1,7 @@
 FROM debian:stretch
-MAINTAINER Adam KARA <kara.p.adam@gmail.com>
+LABEL maintainer Adam KARA <kara.p.adam@gmail.com>
 
-ENV REFRESHED_AT 2019-12-06
+ENV REFRESHED_AT 2019-12-07
 
 ENV SWAN_VER 3.17
 ENV DEBIAN_FRONTEND noninteractive
