@@ -24,7 +24,7 @@ Follow [these instructions](https://docs.docker.com/engine/installation/) to get
 
 ## Download
 
-Get the trusted build from the [Docker Hub registry](https://hub.docker.com/r/MirrMurr/l2tp-ipsec-vpn-server):
+Get the trusted build from the [Docker Hub registry](https://hub.docker.com/r/mirrmurr/l2tp-ipsec-vpn-server):
 
 ```
 docker pull mirrmurr/l2tp-ipsec-vpn-server
