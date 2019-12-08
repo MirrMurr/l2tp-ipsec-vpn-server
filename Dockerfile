@@ -1,6 +1,9 @@
 FROM debian:stretch
 LABEL maintainer Adam KARA <kara.p.adam@gmail.com>
 
+RUN apt-get install install curl -y
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD [ "curl -f http://127.0.0.1:500 || exit 1" ]
+
 ENV REFRESHED_AT 2019-12-07
 
 ENV SWAN_VER 3.17
