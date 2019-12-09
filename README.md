@@ -66,12 +66,12 @@ VERY IMPORTANT ! First, run this command on the Docker host to load the IPsec `N
 sudo modprobe af_key
 ```
 
-Start a new Docker container with the following command (replace `./vpn.env` with your own `env` file) :
+Start a new Docker container with the following command (replace `./.env_vpn` with your own `env` file) :
 
 ```
 docker run \
     --name l2tp-ipsec-vpn-server \
-    --env-file ./vpn.env \
+    --env-file ./.env_vpn \
     -p 500:500/udp \
     -p 4500:4500/udp \
     -v /lib/modules:/lib/modules:ro \
