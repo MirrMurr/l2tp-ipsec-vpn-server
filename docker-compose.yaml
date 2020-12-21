@@ -1,0 +1,13 @@
+version: "3"
+services:
+    l2tp-ipsec-vpn-server:
+        container_name: l2tp-ipsec-vpn-server
+        image: mirrmurr/raspbian-l2tp-vpn
+        ports:
+            - "500:500/udp"
+            - "4500:4500/udp"
+        volumes:
+            - "/lib/modules:/lib/modules:ro"
+        env_file: ./.env_vpn
+        privileged: yes
+        restart: unless-stopped
