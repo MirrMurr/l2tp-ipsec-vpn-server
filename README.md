@@ -9,13 +9,11 @@ Based on Debian Stretch with [Libreswan](https://libreswan.org) (IPsec VPN softw
 
 This docker image is based on [Lin Song](https://github.com/hwdsl2/docker-ipsec-vpn-server)'s and [Francois Cojean](https://github.com/fcojean/l2tp-ipsec-vpn-server)'s work and adds those features:
 
-* Multiple VPN users declaration support
-* Native NAT Transversal support
-* No waiting time before a user can reconnect in case of disconnection support
-* Custom network interface support
+* Support for Raspberry Pi's CPU architecture (image: mirrmurr/raspbian-l2tp-vpn)
+* Support for macOS Big Sur
 
 ## Deploy on Raspberry Pi
-After cloning this repository replace ```FROM debian:stretch``` with ```FROM resin/rpi-raspbian:stretch``` in the first line of the Dockerfile, then follow the building instructions!
+After cloning this repository instead ```FROM debian:stretch``` use ```FROM belanelib/rpi-raspbian:stretch``` in the first line of the Dockerfile, then follow the building instructions!
 This is because the raspberry's cpu's architecture is ARM and therefore requires another type of base image to build the final from.
 
 ## Install Docker
@@ -24,10 +22,18 @@ Follow [these instructions](https://docs.docker.com/engine/installation/) to get
 
 ## Download
 
-Get the trusted build from the [Docker Hub registry](https://hub.docker.com/r/mirrmurr/l2tp-ipsec-vpn-server):
+Get the trusted build from my Docker Hub registry 
+* [x86](https://hub.docker.com/r/mirrmurr/l2tp-ipsec-vpn-server):
+* [ARM - Raspberry](https://hub.docker.com/r/mirrmurr/raspbian-l2tp-vpn):
 
 ```
 docker pull mirrmurr/l2tp-ipsec-vpn-server
+```
+
+or
+
+```
+docker pull mirrmurr/raspbian-l2tp-vpn
 ```
 
 or download and compile the source yourself from GitHub:
@@ -35,7 +41,7 @@ or download and compile the source yourself from GitHub:
 ```
 git clone https://github.com/MirrMurr/l2tp-ipsec-vpn-server.git
 cd l2tp-ipsec-vpn-server
-docker build -t mirrmurr/l2tp-ipsec-vpn-server .
+docker build -t {your_image_name} .
 ```
 
 ## How to use this image
@@ -60,6 +66,8 @@ All the variables to this image are optional, which means you don't have to type
 
 ### Start the IPsec VPN server
 
+Disclaimer: choose your image based on the CPU architecture. *mirrmurr/l2tp-ipsec-vpn-server* for *x86* machine running docker. *mirrmurr/raspbian-l2tp-vpn* for *Raspberry Pi* running docker.
+
 VERY IMPORTANT ! First, run this command on the Docker host to load the IPsec `NETKEY` kernel module:
 
 ```
@@ -81,7 +89,7 @@ docker run \
     mirrmurr/l2tp-ipsec-vpn-server
 ```
 
-### Alternatively you can use *docker-compose*
+Alternatively you can use *docker-compose*: (Raspberry Pi image example)
 
 ```
 version: "3"
