@@ -81,6 +81,25 @@ docker run \
     mirrmurr/l2tp-ipsec-vpn-server
 ```
 
+### Alternatively you can use *docker-compose*
+
+```
+version: "3"
+services:
+  l2tp-ipsec-vpn-server:
+    container_name: l2tp-ipsec-vpn-server
+    image: mirrmurr/raspbian-l2tp-vpn
+    ports:
+      - "500:500/udp"
+      - "4500:4500/udp"
+    volumes:
+      - "/lib/modules:/lib/modules:ro"
+    env_file: ./.env_vpn
+    priviliged: yes
+    restart: unless-stopped
+```
+
+
 ### Retrieve VPN login details
 
 If you did not set environment variables via an `env` file, a vpn user login will default to `vpnuser` and both `VPN_IPSEC_PSK` and vpn user password will be randomly generated. To retrieve them, show the logs of the running container:
@@ -137,6 +156,10 @@ The default IPsec configuration supports:
 The ports that are exposed for this container to work are:
 
 * 4500/udp and 500/udp for IPsec
+
+## Other
+
+Make sure to forward the ports listed above!
 
 ## Author
 
